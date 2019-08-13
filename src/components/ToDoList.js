@@ -19,13 +19,7 @@ const ToDoListe = () => {
     return (
         <>
             <h1>To-Do-Liste</h1>
-            {
-                // .map für jedes Element
-                elementList.map = (elements => {
-                    // TO-DO
-                })
-            }
-            <ToDoListElement />
+            <ToDoListElement elementList={elementList}/>
         </>
     )
 }
