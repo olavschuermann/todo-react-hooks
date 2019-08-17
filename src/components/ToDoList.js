@@ -19,9 +19,14 @@ const ToDoListe = () => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log('Gesendet!');
-        console.log(value);
         if(!value) return;
+        addToDo(value); 
         setValue('');
+    }
+
+    const addToDo = task => {
+        console.log(task);
+        setElementList([...elementList, {task}]);
     }
 
     // Wert für Input-Feld
