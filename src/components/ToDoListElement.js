@@ -15,9 +15,7 @@ const ToDoListElement = ({ element }) => {
             setToggleClass('todo-done');
         } else {
             setToggleClass('todo-notdone');
-        }
-
-    
+        }    
     }
     
     return (
