@@ -1,5 +1,6 @@
 .todo-notdone {
     color: red;
+    text-decoration: none;
 }
 
 .todo-done {
