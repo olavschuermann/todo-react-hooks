@@ -36,8 +36,10 @@ const ToDoListe = () => {
 
     return (
         <>
-            <h1>To-Do-Liste</h1>
-            <ToDoListElement elementList={elementList}/>
+            <h1>To-Dos</h1>
+            {elementList.map((element) => (
+                <ToDoListElement key={element.id} element={element}/>
+            ))}
             <form onSubmit={handleSubmit}>
                 <label>Neues To-Do hinzufügen:</label><br />
                 {/* Wert aus Input auslesen! */}
