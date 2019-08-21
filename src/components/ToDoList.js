@@ -34,11 +34,19 @@ const ToDoListe = () => {
     // Wert für Input-Feld
     const [value, setValue] = useState('');
 
+    const toDoDelete = () => {
+        console.log("Deleted!");
+        
+        // Delete todo - Get List, Entferne To-Do, Neue Liste
+        // Vom Child zurückgeben an Parent, dort Array mit Splice neu aufbauen
+
+    }
+
     return (
         <>
             <h1>To-Dos</h1>
             {elementList.map((element) => (
-                <ToDoListElement key={element.id} element={element}/>
+                <ToDoListElement key={element.id} element={element} toDoDelete={toDoDelete}/>
             ))}
             <form onSubmit={handleSubmit}>
                 <label>Neues To-Do hinzufügen:</label><br />
