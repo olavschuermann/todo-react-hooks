@@ -34,11 +34,17 @@ const ToDoListe = () => {
     // Wert für Input-Feld
     const [value, setValue] = useState('');
 
-    const toDoDelete = () => {
+    const toDoDelete = (props) => {
         console.log("Deleted!");
         
         // Delete todo - Get List, Entferne To-Do, Neue Liste
         // Vom Child zurückgeben an Parent, dort Array mit Splice neu aufbauen
+        const newElementList = [...elementList];
+        newElementList.splice(props.element, 1);
+        //setElementList(newElementList.splice(index, 1));
+        setElementList(newElementList);
+        console.log("Index: " + props.element);
+        console.log (elementList);
 
     }
 
