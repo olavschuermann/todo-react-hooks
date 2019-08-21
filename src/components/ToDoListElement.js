@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './ToDo.styles.css';
 
-const ToDoListElement = ({ element, toDoDelete }) => {
+const ToDoListElement = ({ element, toDoDelete, id }) => {
 
     const [toggleClass, setToggleClass] = useState('todo-notdone');
 
@@ -28,7 +28,7 @@ const ToDoListElement = ({ element, toDoDelete }) => {
                 <div>
                     <div className={toggleClass}>{element.task}</div>
                     <button onClick={toDoToggle}>Erledigt</button>
-                    <button onClick={toDoDelete}>Löschen</button>
+                    <button onClick={toDoDelete} index={element.id}>Löschen</button>
                 </div>
             }
         </div>

@@ -24,7 +24,7 @@ const ToDoListe = () => {
         setValue('');
     }
 
-    const addToDo = task => {
+    const addToDo = (task) => {
         console.log(task);
         setElementList([...elementList, {task}]);
         console.log(elementList);
@@ -34,16 +34,16 @@ const ToDoListe = () => {
     // Wert für Input-Feld
     const [value, setValue] = useState('');
 
-    const toDoDelete = (props) => {
+    const toDoDelete = (id) => {
         console.log("Deleted!");
         
         // Delete todo - Get List, Entferne To-Do, Neue Liste
         // Vom Child zurückgeben an Parent, dort Array mit Splice neu aufbauen
         const newElementList = [...elementList];
-        newElementList.splice(props.element, 1);
+        newElementList.splice(id, 1);
         //setElementList(newElementList.splice(index, 1));
         setElementList(newElementList);
-        console.log("Index: " + props.element);
+        console.log("Index: " + id);
         console.log (elementList);
 
     }
@@ -52,12 +52,17 @@ const ToDoListe = () => {
         <>
             <h1>To-Dos</h1>
             {elementList.map((element) => (
-                <ToDoListElement key={element.id} element={element} toDoDelete={toDoDelete}/>
+                <ToDoListElement key={element.id} element={element} 
+                toDoDelete={toDoDelete}
+                index={element.id}/>
             ))}
             <form onSubmit={handleSubmit}>
                 <label>Neues To-Do hinzufügen:</label><br />
                 {/* Wert aus Input auslesen! */}
-                <input type="text" placeholder="To-Do eingeben..." name="addtodo" value={value} onChange={e => setValue(e.target.value)}/>
+                <input type="text" placeholder="To-Do eingeben..." 
+                name="addtodo" value={value} 
+                onChange={e => setValue(e.target.value)}
+                />
                 <input type="submit" value="Absenden" />
             </form>
         </>
