@@ -24,6 +24,8 @@ const ToDoListe = () => {
         setValue('');
     }
 
+    // Bug: es wird immer das erste Element gelöscht?
+    // evtl. wird index nicht richtig übertragen...
     const addToDo = (task) => {
         const newToDoList = [...elementList, {task}];
         setElementList(newToDoList);
