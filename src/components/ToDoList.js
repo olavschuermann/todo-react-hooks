@@ -29,7 +29,7 @@ const ToDoListe = () => {
     const addToDo = (task) => {
         const newToDoList = [...elementList, {task}];
         setElementList(newToDoList);
-        console.log(elementList);
+        // console.log(elementList);
     }
 
     // Wert für Input-Feld
@@ -44,7 +44,7 @@ const ToDoListe = () => {
         newElementList.splice(index, 1);
         //setElementList(newElementList.splice(index, 1));
         setElementList(newElementList);
-        console.log("Index: " + index);
+        console.log("Der index ist: " + index);
         console.log (elementList);
 
     }
