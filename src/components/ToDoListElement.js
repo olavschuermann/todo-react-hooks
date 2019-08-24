@@ -29,7 +29,7 @@ const ToDoListElement = ({ element, toDoDelete, index }) => {
                     <div className={toggleClass}>{element.task}</div>
                     <div>Index: {index}</div>
                     <button onClick={toDoToggle}>Erledigt</button>
-                    <button onClick={toDoDelete}>Löschen</button>
+                    <button onClick={() => toDoDelete(index)}>Löschen</button>
                 </div>
             }
         </div>

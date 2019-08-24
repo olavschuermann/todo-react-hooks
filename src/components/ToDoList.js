@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import ToDoListElement from './ToDoListElement';
 
+// To-DO-App / Training Version 1 - bis 24.08.19 (FINAL)
+
 const ToDoListe = () => {
     const [elementList, setElementList] = useState([
         {
@@ -53,7 +55,7 @@ const ToDoListe = () => {
         <>
             <h1>To-Dos</h1>
             {elementList.map((element, index) => (
-                <ToDoListElement key={element.id} element={element} 
+                <ToDoListElement key={index} element={element} 
                 toDoDelete={toDoDelete}
                 index={index}/>
             ))}
